@@ -316,6 +316,10 @@ local windowtabs = {
         Name = "Utility",
         Icon = "🛠️"
     }),
+    Fun = guilib:CreateCategory({
+        Name = "Fun",
+        Icon = "👾"
+    }),
     World = guilib:CreateCategory({
         Name = "World",
         Icon = "🌎"
@@ -1148,6 +1152,17 @@ local NameTags = windowtabs.Render:CreateButton({
         end
     end,
     HoverText = ""
+})
+local Sit = windowtabs.Fun:CreateButton({
+    Name = "Sit",
+    Function = function(callback)
+        if callback then
+		game.Players.LocalPlayer.Character.Humanoid.Sit = true
+        else
+		game.Players.LocalPlayer.Character.Humanoid.Sit = false
+        end
+    end,
+    HoverText = "Makes you sit/trip"
 })
 
 local function LoadSettings()
