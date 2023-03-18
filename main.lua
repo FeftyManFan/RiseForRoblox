@@ -1165,6 +1165,24 @@ local Sit = windowtabs.Fun:CreateButton({
     HoverText = "Makes you sit/trip"
 })
 
+local Sit = windowtabs.Fun:CreateButton({
+    Name = "Annoy",
+    Function = function(callback)
+        if callback then
+		local Players = game.Players
+		local lplr = Players.LocalPlayer
+		local username = lplr.Name		
+		local textChatService = game:GetService("TextChatService")
+		for i,v in pairs(Players:GetChildren()) do
+			v.Chatted:Connect(function(msg)
+				textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("["..v.DisplayName.."] "..msg)
+			end)
+		end
+        end
+    end,
+    HoverText = "Repeat others messages"
+})
+
 local function LoadSettings()
     local suc, res = pcall(function() return game:GetService("HttpService"):JSONDecode(readfile("rise/settings.json")) end)
     if suc and type(res) == "table" then 
