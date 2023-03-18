@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("URL",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FeftyManFan/RiseForRoblox/main/main.lua",true))()
