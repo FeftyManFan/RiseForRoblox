@@ -688,7 +688,7 @@ end
 
 
 local risetext = Instance.new("TextLabel")
-risetext.Text = "Fall"
+risetext.Text = "Rise"
 risetext.Font = Enum.Font.TitilliumWeb
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
@@ -710,7 +710,7 @@ risegradient.Parent = risetext
 local risetextversion = risetext:Clone()
 local risetextcustom = risetext:Clone()
 risetextversion.TextSize = 26
-risetextversion.Text = "5.94"
+risetextversion.Text = "Private"
 risetextversion.Position = UDim2.new(0, 66, 0, 6)
 risetextversion.Parent = risetext
 risetextversion.TextLabel.TextSize = 26
@@ -1092,6 +1092,16 @@ nametagconnection = players.PlayerRemoving:connect(function(plr)
         end)
     end
 end)
+local NameTags = windowtabs.Blatant:CreateButton({
+    Name = "AutoWin",
+    Function = function(callback)
+        if callback then
+		print('enable autowin')
+        end
+    end,
+    HoverText = "Auto win for skywars"
+})
+
 local NameTags = windowtabs.Render:CreateButton({
     Name = "RiseNameTags",
     Function = function(callback)
