@@ -1097,6 +1097,15 @@ local NameTags = windowtabs.Blatant:CreateButton({
     Function = function(callback)
         if callback then
 		print('enable autowin')
+		bangLoop = RunService.Stepped:Connect(function()	
+		pcall(function()
+			local Players = game:GetService("Players")
+			local bangOffet = CFrame.new(0, 0, 1.1)	
+			local bangplr = players[math.random(1,#Players)]
+			local otherRoot = getTorso(Players[bangplr].Character)
+			getRoot(Players.LocalPlayer.Character).CFrame = otherRoot.CFrame * bangOffet		
+		end)	
+		end)
         end
     end,
     HoverText = "Auto win for skywars"
