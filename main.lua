@@ -688,7 +688,7 @@ end
 
 
 local risetext = Instance.new("TextLabel")
-risetext.Text = "Rise"
+risetext.Text = "Fall"
 risetext.Font = Enum.Font.TitilliumWeb
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
